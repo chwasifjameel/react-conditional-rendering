@@ -1,0 +1,39 @@
+{
+	"name": "react-conditional-rendering",
+	"version": "0.0.1",
+	"description": "A React component library that helps in conditional rendering.",
+	"main": "dist/react-render.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "webpack --mode production"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/chwasifjameel/react-conditonal-rendering.git"
+	},
+	"keywords": [
+		"react-conditional-rendering",
+		"conditional rendering",
+		"react",
+		"react utility"
+	],
+	"author": "Wasif Jameel",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/chwasifjameel/react-conditonal-rendering/issues"
+	},
+	"homepage": "https://github.com/chwasifjameel/react-conditonal-rendering",
+	"devDependencies": {
+		"@babel/core": "^7.2.2",
+		"@babel/preset-env": "^7.2.3",
+		"@babel/preset-react": "^7.0.0",
+		"@tulipjs/eslint-config": "^1.1.1",
+		"babel-loader": "^8.0.1",
+		"webpack": "^4.28.3",
+		"webpack-cli": "^3.2.0"
+	},
+	"dependencies": {
+		"react": "^16.8.6",
+		"react-dom": "^16.8.6"
+	}
+}
