@@ -9,7 +9,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/chwasifjameel/react-conditonal-rendering.git"
+		"url": "git+https://github.com/chwasifjameel/react-conditional-rendering.git"
 	},
 	"keywords": [
 		"react-conditional-rendering",
@@ -20,9 +20,9 @@
 	"author": "Wasif Jameel",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/chwasifjameel/react-conditonal-rendering/issues"
+		"url": "https://github.com/chwasifjameel/react-conditional-rendering/issues"
 	},
-	"homepage": "https://github.com/chwasifjameel/react-conditonal-rendering",
+	"homepage": "https://github.com/chwasifjameel/react-conditional-rendering",
 	"devDependencies": {
 		"@babel/core": "^7.2.2",
 		"@babel/preset-env": "^7.2.3",
