@@ -20,19 +20,51 @@ $ npm start
 
 ```jsx
 import React from 'react';
-import { RenderIf } from 'react-conditioanl-rendering';
+import { RenderIf, RenderComponent } from 'react-conditional-rendering';
 
 export default class extends React.Component {
-state={ buttonPressed = false };
-render() {
-  const { buttonPressed=false }=this.state;
-    return (
-      <RenderIf condition={buttonPressed}>
-        <img src="https://via.placeholder.com/400/ffffff/c0392b/&text=slide1" />
-      </RenderIf>
-      <button onCLick={this.setState({buttonPressed:!buttonPressed})> Click Me</button>
-    );
-  }
-}
+	state = { buttonPressed: false, renderDummyComponent: false };
 
+	dummyComponent = () => (
+		<div
+			style={{
+				height: 100,
+				width: 100,
+				backgroundColor: 'yellow',
+				overflow: 'hidden',
+			}}
+		>
+			<p>This component only render if the render component is checked</p>
+		</div>
+	);
+
+	render() {
+		const { buttonPressed = false, renderDummyComponent = false } = this.state;
+		return (
+			<div>
+				<RenderIf condition={buttonPressed}>
+					<div style={{ height: 100, width: 100, backgroundColor: 'red' }}>
+						Rendering with children
+					</div>
+				</RenderIf>
+				<RenderComponent
+					condition={renderDummyComponent}
+					component={this.dummyComponent}
+				/>
+				<button
+					onClick={() => this.setState({ buttonPressed: !buttonPressed })}
+				>
+					First Example
+				</button>
+				<button
+					onClick={() =>
+						this.setState({ renderDummyComponent: !renderDummyComponent })
+					}
+				>
+					Second Example
+				</button>
+			</div>
+		);
+	}
+}
 ```
