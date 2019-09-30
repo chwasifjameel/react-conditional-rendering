@@ -25,7 +25,7 @@ import { RenderIf } from 'react-conditioanl-rendering';
 export default class extends React.Component {
 state={ buttonPressed = false };
 render() {
-  cosnt { buttonPressed=false }=this.state;
+  const { buttonPressed=false }=this.state;
     return (
       <RenderIf condition={buttonPressed}>
         <img src="https://via.placeholder.com/400/ffffff/c0392b/&text=slide1" />
@@ -34,4 +34,5 @@ render() {
     );
   }
 }
+
 ```

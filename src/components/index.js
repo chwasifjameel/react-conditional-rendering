@@ -3,3 +3,4 @@
 // allows for simpler scaling when your library grows in size, and even adds
 // different tech like TypeScript
 export { default as RenderIf } from './RenderIf';
+export { default as RenderComponent } from './RenderComponent';
