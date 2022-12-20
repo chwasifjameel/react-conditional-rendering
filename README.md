@@ -19,52 +19,48 @@ $ npm start
 ### Usage
 
 ```jsx
-import React from 'react';
-import { RenderIf, RenderComponent } from 'react-conditional-rendering';
+import { useState } from "react";
+import { RenderIf, RenderComponent } from "react-conditional-rendering";
 
-export default class extends React.Component {
-	state = { buttonPressed: false, renderDummyComponent: false };
+function App() {
+  const [buttonPressed, setButtonPressed] = useState(false);
+  const [renderDummyComponent, setRenderDummyComponent] = useState(false);
 
-	dummyComponent = () => (
-		<div
-			style={{
-				height: 100,
-				width: 100,
-				backgroundColor: 'yellow',
-				overflow: 'hidden',
-			}}
-		>
-			<p>This component only render if the render component is checked</p>
-		</div>
-	);
-
-	render() {
-		const { buttonPressed = false, renderDummyComponent = false } = this.state;
-		return (
-			<div>
-				<RenderIf condition={buttonPressed}>
-					<div style={{ height: 100, width: 100, backgroundColor: 'red' }}>
-						Rendering with children
-					</div>
-				</RenderIf>
-				<RenderComponent
-					condition={renderDummyComponent}
-					component={this.dummyComponent}
-				/>
-				<button
-					onClick={() => this.setState({ buttonPressed: !buttonPressed })}
-				>
-					First Example
-				</button>
-				<button
-					onClick={() =>
-						this.setState({ renderDummyComponent: !renderDummyComponent })
-					}
-				>
-					Second Example
-				</button>
-			</div>
-		);
-	}
+  const dummyComponent = () => {
+    return (
+      <div
+        style={{
+          height: 100,
+          width: 100,
+          backgroundColor: "yellow",
+          overflow: "hidden",
+        }}
+      >
+        <p>This component only render if the render component is checked</p>
+      </div>
+    );
+  };
+  return (
+    <div>
+      <RenderIf condition={buttonPressed}>
+        <div style={{ height: 100, width: 100, backgroundColor: "red" }}>
+          Rendering with children
+        </div>
+      </RenderIf>
+      <RenderComponent
+        condition={renderDummyComponent}
+        component={dummyComponent}
+      />
+      <button onClick={() => setButtonPressed(!buttonPressed)}>
+        First Example
+      </button>
+      <button onClick={() => setRenderDummyComponent(!renderDummyComponent)}>
+        Second Example
+      </button>
+    </div>
+  );
 }
+
+export default App;
+
 ```
